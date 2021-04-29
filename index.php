@@ -1,10 +1,12 @@
-<html>
+<!Doctype html>
+<html lang="es">
+<?php require "includes/head.php";?>
  <head>
   <title>ElTronc</title>
  </head>
 <body>
+<?php require "includes/header.php";?>
  <?php echo '<p>Bienvenido a la tienda</p>'; ?>
  </body>
 </html>
-<link href="styles/style.css" rel="stylesheet">
-<a href="" class="link_rosa">
+

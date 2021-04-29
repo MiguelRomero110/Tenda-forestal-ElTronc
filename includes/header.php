@@ -1,9 +1,3 @@
-<?php require "includes/mysql.php";?>
-<head>
-<title>ElTronc</title>
-<meta charset="UTF-8">
-<meta name="title" content="ElTronc">
-<meta name="description" content="Tendade forestal">
-<link href="styles/style.css" rel="stylesheet">
-
-</head>
+<a href="index.php"> Index</a>
+<a href="insert_producte.php">Insertar nou producte</a>
+<a href="list_producte.php">Llista de producte</a>
