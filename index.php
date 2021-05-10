@@ -6,7 +6,6 @@
  </head>
 <body>
 <?php require "includes/header.php";?>
- <?php echo '<p>Bienvenido a la tienda</p>'; ?>
+<h2>Bienvenido a la tienda</h2>
  </body>
 </html>
-

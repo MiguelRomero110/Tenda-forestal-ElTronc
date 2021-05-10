@@ -1,6 +1,6 @@
 <?php require "includes/mysql.php";?>
 <head>
-<title>ElTronc</title>
+<h1>ElTronc</h1>
 <meta charset="UTF-8">
 <meta name="title" content="ElTronc">
 <meta name="description" content="Tenda de forestal">
