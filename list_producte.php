@@ -1,11 +1,14 @@
+<?php require "includes/head.php";?>
+<?php require "includes/header.php";?>
+
 <from action="insert_producte.php" method="get">
     <select name="proveior">
     <?php
         $query="select nom, id from proveïdor order by nom";
     $result=mysql_query($bbdd, $query);
-    while ($row= mysqli_fetihassoc($result)){
-        echo "<option value=\"$row[ID]\">
-        $row [nom]
+    while ($proveidor= mysqli_fetihassoc($result)){
+        echo "<option value=\"$proveidor[ID_proveidor]\">
+        $proveidor [Nom]
         </option>";
     } 
 ?> 
@@ -21,8 +24,8 @@ $query= "select pr.* pd.Nom as Nom Proveidor from producte as pr inner join prov
     $where order by pr.Nom";     
 ?>
 <form>
-<input name="nom"/>
-<select name="IDProveidor">
+<input name="Nom"/>
+<select name="ID_proveidor">
 
 </form>
 
@@ -37,13 +40,13 @@ $query= "select pr.* pd.Nom as Nom Proveidor from producte as pr inner join prov
     </thead>
     <tbody>
         <?php
-        $query="select * from productes order by nom";
+        $query="select * from producte order by nom";
         $result=mysqli_query($bbdd,$query);
-        while($row=mysql_fetch_assoc($result)){
+        while($producte=mysql_fetch_assoc($result)){
             echo"<tr>
-                    <td>$row[Preu]</td>
-                    <td>$row[Stock]</td>
-                    <td>$row[fkID_proveidor]</td>
+                    <td>$producte[Preu]</td>
+                    <td>$producte[Stock]</td>
+                    <td>$producte[fkID_proveidor]</td>
                 </tr>";
         }
         ?>

@@ -1,5 +1,12 @@
+<!Doctype html>
+<html lang=es>
 
-require head
+<?php require "includes/head.php" ?>
+
+
 <body>
-Ok
+<?php require "includes/header.php";?>
+
+<h2>OK</h2>
 </body>
+</html>
