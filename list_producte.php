@@ -5,7 +5,7 @@
     <select name="proveior">
     <?php
         $query="select nom, id from proveïdor order by nom";
-    $result=mysql_query($bbdd, $query);
+    $result=mysqli_query($bbdd, $query);
     while ($proveidor= mysqli_fetihassoc($result)){
         echo "<option value=\"$proveidor[ID_proveidor]\">
         $proveidor [Nom]
@@ -42,7 +42,7 @@ $query= "select pr.* pd.Nom as Nom Proveidor from producte as pr inner join prov
         <?php
         $query="select * from producte order by nom";
         $result=mysqli_query($bbdd,$query);
-        while($producte=mysql_fetch_assoc($result)){
+        while($producte=mysqli_fetch_assoc($result)){
             echo"<tr>
                     <td>$producte[Preu]</td>
                     <td>$producte[Stock]</td>

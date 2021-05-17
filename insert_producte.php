@@ -9,17 +9,47 @@
         <from action="insertar_api_producte.php" method="post">
             <div>
                 <lable>
-<select>
+                    Nom
+                </lable>
+                <input type="text" maxlength="255" required minlenghth="2" name="Nom">
+            </div>
+            <div>
+                <lable>
+                    Preu
+                </lable>
+                <input type="number" max="2000" required min="1" name="Preu" step="0.01">
+            </div>
+            <div>
+                <lable>
+                    Stock
+                </lable>
+                <input type="number" required min="1" name="Stock">
+            </div>
+            <div>
+<select name="ID_proveidor" required>
+<option value=""></option>
 <?php
-
-$query="SELECT ID_proveidor,Nom from proveidor;";
-$result = mysqli_query($bbdd, $query) OR DIE ("Error");
-while($proveidor = mysql_fetch_assoc ($result)){
-    echo "<option_value = \"$proveidor[ID_proveidor]\">
+$query="SELECT ID_proveidor, Nom from proveidor;";
+$result = mysqli_query($bbdd, $query) or die (mysqli_error($bbdd));
+while($proveidor = mysqli_fetch_assoc($result)) {
+    echo "<option value = \"$proveidor[ID_proveidor]\">
     $proveidor[Nom]
     </option>";
 }
 ?>
 </select>
+            </div>
+            <div>
+                <label>
+                    Reset
+                </label>
+                <input type="reset">
+            </div>
+            <div>
+            <button type="submit">
+                Enviar
+            </button>
+            </div>
+        </form>
     </body>
 </html>
