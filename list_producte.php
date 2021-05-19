@@ -1,54 +1,54 @@
+<!DOCTYPE html>
+    <html lang= "es">
 <?php require "includes/head.php";?>
+<body>
 <?php require "includes/header.php";?>
-
-<from action="insert_producte.php" method="get">
-    <select name="proveior">
+    <h2> Llistar producte<h2>
+    <h6> Er Serresiete <h6>
+    <p>Parrafo no importante <p>
+<from action="list_producte.php" method="GET">
+    <select name="proveidor">
     <?php
-        $query="select nom, id from proveïdor order by nom";
+        $query="SELECT Nom, ID_proveidor FROM proveidor order by Nom";
     $result=mysqli_query($bbdd, $query);
-    while ($proveidor= mysqli_fetihassoc($result)){
+    while ($proveidor= mysqli_fetch_assoc($result)) {
         echo "<option value=\"$proveidor[ID_proveidor]\">
         $proveidor [Nom]
         </option>";
     } 
 ?> 
 </select>
-<button type="submit"> filtrar </button>
+<button type="submit"> Filtrar </button>
 </from>
-<?php
-$where= "";
-if (isset($_GET[proveidor])){
-    $where="where pd.ID= $_GET [proveidor]";
-}
-$query= "select pr.* pd.Nom as Nom Proveidor from producte as pr inner join proveidor as pd on (pr fk_idproducte = pd.ID)
-    $where order by pr.Nom";     
-?>
-<form>
-<input name="Nom"/>
-<select name="ID_proveidor">
-
-</form>
-
-
+<?php require "includes/header.php";?>
+    <h2> Llistar producte<h2>
+    <h6> Er Serresiete <h6>
+    <p>Parrafo no importante <p>
 <table>
     <thead>
         <tr>
-            <th>Preu</th>
-            <th>Stock</th>
-            <th>fkID_proveidor</th>
+            <th> Nom </th>
+            <th> Preu </th>
+            <th> Stock </th>
+            <th> fkID_proveidor </th>
         </tr>
     </thead>
     <tbody>
-        <?php
-        $query="select * from producte order by nom";
-        $result=mysqli_query($bbdd,$query);
-        while($producte=mysqli_fetch_assoc($result)){
-            echo"<tr>
-                    <td>$producte[Preu]</td>
-                    <td>$producte[Stock]</td>
-                    <td>$producte[fkID_proveidor]</td>
-                </tr>";
-        }
-        ?>
-    </tbody>
+<?php
+$where= "";
+if (isset($_GET[proveidor])) {
+    "$where  WHERE pd.ID_proveidor = $_GET[proveidor] ";
+}
+$query= "SELECT pr.* pd.Nom AS Nom proveidor FROM producte AS pr INNER JOIN proveidor AS pd ON (pr fkID_producte = pd.ID_proveidor)
+    $where ORDER BY pr.Nom";     
+$result=mysqli_query($bbdd,$query);
+while($producte=mysqli_fetch_assoc($result))
+    echo"<tr>
+            <td>$producte[Nom]</td>
+            <td>$producte[Preu]</td>
+            <td>$producte[Stock]</td>
+            <td>$producte[fkID_proveidor]</td>
+        </tr>";
+?>
+</tbody>
 </table>
