@@ -6,7 +6,7 @@
         <h2>Insertar Producte<h2>
         <h9>Bebesitaaaa uaaaaa</h9>
         <p>Parrafo para los rials</p>
-        <from action="insertar_api_producte.php" method="post">
+        <form action="insertar_api_producte.php" method="post">
             <div>
                 <lable>
                     Nom
