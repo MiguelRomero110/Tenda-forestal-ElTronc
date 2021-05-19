@@ -6,7 +6,7 @@
         <h2> No s'han insertat les dades <h2>
         <p>
             <?php
-                echo $_GET[mysqli_error($bbdd)];
+                echo $_GET["error"];
             ?>
         </p>
     </body>
