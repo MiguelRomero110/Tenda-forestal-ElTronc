@@ -5,8 +5,8 @@
         <?php require "includes/header.php";?>
         <h2>Tenda Forestal El Tronc tot el que necessites<h2>
         <h9>Tenda per a feines de Forestal</h9>
-        <p>Insertar un Producte per comprar:</p>
-        <form action="insertar_api_producte.php" method="post">
+        <p>Crea el teu perfil de proveidor per començar a vendre productes forestals:</p>
+        <form action="insertar_api_proveidor.php" method="post">
             <div>
                 <lable>
                     Nom
@@ -15,34 +15,34 @@
             </div>
             <div>
                 <lable>
-                    Preu
+                    CP
                 </lable>
-                <input type="number" max="2000" required min="1" name="Preu" step="0.01">
+                <input type="number" max="20000" required min="1" name="CP">
             </div>
             <div>
                 <lable>
-                    Stock
+                    Adreca
                 </lable>
-                <input type="number" required min="1" name="Stock">
+                <input type="text" required min="10" name="Adreca">
             </div>
             <div>
-<select name="ID_proveidor" required>
-<option value=""></option>
+                <lable>
+                    Poblacio
+                </lable>
+                <input type="text" required min="10" name="Poblacio">
+            </div>
+            <div>
+                <lable>
+                    Telefon
+                </lable>
+                <input type="number" max="800000000" required min="600000000" name="Telefon">
+            </div>
 
-<?php
-$query="SELECT ID_proveidor, Nom from proveidor;";
-$result = mysqli_query($bbdd, $query) or die (mysqli_error($bbdd));
-while($proveidor = mysqli_fetch_assoc($result)) {
-    echo "<option value = \"$proveidor[ID_proveidor]\">
-    $proveidor[Nom]
-    </option>";
-}
-?>
 </select>
             </div>
             <div>
                 <label>
-                    Reset
+                    
                 </label>
                 <input type="reset">
             </div>
