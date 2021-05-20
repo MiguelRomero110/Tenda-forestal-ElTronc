@@ -7,13 +7,13 @@
     <h2> Llistar producte<h2>
     <h6> Er Serresiete <h6>
     <p>Parrafo no importante <p>
-<form action="list_producte.php" method="GET">
+<form action="list_proveidor.php" method="GET">
     <select name="proveidor">
     <?php
-        $query="SELECT Nom, ID_proveidor FROM proveidor ORDER BY Nom;";
+        $query="SELECT Nom, Poblacio FROM proveidor ORDER BY Nom;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
-        echo "<option value=\"$row[ID_proveidor]\"> $row[Nom] </option>";
+        echo "<option value=\"$row[Poblacio]\"> $row[Nom] </option>";
     } 
 ?> 
 </select>
@@ -25,9 +25,10 @@
         <tr>
             
             <th> Nom </th>
-            <th> Preu </th>
-            <th> Stock </th>
-            <th> ID_proveidor </th>
+            <th> Adreca </th>
+            <th> Codi Posatal </th>
+            <th> Població </th>
+            <th> Telèfon </th>
             <th> Opciones </th>
         </tr>
     </thead>

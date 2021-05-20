@@ -3,11 +3,16 @@ td{
     color:#000000;
     border: 1px solid #000000;
     }
-    a{
+a{
     padding:5px;
     margin:5px;
-    border: 5px solid;    
+    border:5px solid;    
     }
-    a{padding: 5px 5px 5px 5px;}
-    table a {padding: 5px}
+
+
+th a{
+    padding: 5px;
+    margin: 5px;
+    border:chocolate 5px solid;
+}
     
