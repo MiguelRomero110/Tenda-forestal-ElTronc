@@ -7,10 +7,11 @@
 </header>
 
 <body>
+<B><FONT COLOR="red">
 <center>
    <?php require "includes/header.php"; ?>
    <h1> Productes </h1>
-
+   <HR WIDTH=80% SIZE=5>
    <body bgcolor="#2AB46">
 
    </body>
@@ -41,5 +42,9 @@
       ?>
    </tbody>
 </table>
+</FONT>
+<br>
 </center>
+<HR WIDTH=80% SIZE=5>
+<IMG SRC="http://www.canalgif.net/Gifs-animados/Herramientas/Motosierras/Imagen-animada-Motosierra-04.gif"ALIGN=MIDDLE>
 </body>

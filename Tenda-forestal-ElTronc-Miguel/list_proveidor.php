@@ -7,10 +7,11 @@
 </header>
 
 <body>
+<B><FONT COLOR="red">
 <center>
    <?php require "includes/header.php"; ?>
    <h1> Proveidors </h1>
-
+   <HR WIDTH=80% SIZE=5>
    <body bgcolor="#68C89">
    </body>
 
@@ -43,4 +44,7 @@
    </tbody>
 </table>
 </center>
+</FONT>
+<br>
+<HR WIDTH=80% SIZE=5>
 </body>

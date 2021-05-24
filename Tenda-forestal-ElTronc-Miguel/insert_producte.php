@@ -2,10 +2,12 @@
 <html lang="es">
     <?php require "includes/head.php";?>
     <body>
+    <B><FONT COLOR="red">
     <center>
         <?php require "includes/header.php";?>
         <h2> Tenda Forestal El Tronc tot el que necessites <h2>
         <h9>  Tenda per a feines de Forestal </h9>
+        <HR WIDTH=80% SIZE=5>
         <p>  Insertar un Producte per comprar: </p>
         <form action="insertar_api_producte.php" method="post">
             <div>
@@ -44,6 +46,10 @@ while($proveidor = mysqli_fetch_assoc($result)) {
             </button>
             </div>
         </form>
+        <HR WIDTH=80% SIZE=5>
+        <IMG SRC="https://m.gifmania.com.mx/Gifs-Animados-Personas/Gif-Animadas-Profesiones/Imagenes-Animadas-Lenadores/Lenador-Cortando-Un-Tronco-60027.gif" ALIGN=MIDDLE>  
     </body>
+    </FONT>
+<br>
     </center>
 </html>

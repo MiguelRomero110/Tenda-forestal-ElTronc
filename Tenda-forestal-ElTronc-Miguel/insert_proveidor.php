@@ -2,10 +2,13 @@
 <html lang="es">
     <?php require "includes/head.php";?>
     <body>
+    
+    <B><FONT COLOR="red">
     <center>
         <?php require "includes/header.php";?>
         <h2>Tenda Forestal El Tronc tot el que necessites<h2>
         <h9>Tenda per a feines de Forestal</h9>
+        <HR WIDTH=80% SIZE=5>
         <p>Crea el teu perfil de proveidor per començar a vendre productes forestals:</p>
         <form action="insertar_api_proveidor.php" method="post">
             <div>
@@ -44,5 +47,9 @@
             </div>
         </form>
         </center>
+        </FONT>
+<br>
+        <HR WIDTH=80% SIZE=5>
+        <IMG SRC="https://m.gifmania.com.mx/Gifs-Animados-Personas/Gif-Animadas-Profesiones/Imagenes-Animadas-Lenadores/Lenador-Intentando-Talar-60026.gif" ALIGN=MIDDLE>
     </body>
 </html>
