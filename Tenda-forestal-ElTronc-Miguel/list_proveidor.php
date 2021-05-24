@@ -7,24 +7,23 @@
 </header>
 
 <body>
+<center>
    <?php require "includes/header.php"; ?>
    <h1> Proveidors </h1>
 
-   <body bgcolor="#6AC89">
+   <body bgcolor="#68C89">
    </body>
 
 </html>
-<style>
-   td {
-      border: 1px solid;
-   }
-</style>
+
 <table>
  <thead> 
   <tr> 
    <th>Nom</th>
    <th>CP</th>
-   <th>Direcció</th>
+   <th>Adreça</th>
+   <th>Telefon</th>
+   <th>Poblacio</th>
   </tr>
   </thead>
    <tbody>
@@ -43,3 +42,5 @@
       ?>
    </tbody>
 </table>
+</center>
+</body>

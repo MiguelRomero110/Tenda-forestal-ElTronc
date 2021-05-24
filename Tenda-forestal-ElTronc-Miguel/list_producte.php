@@ -7,18 +7,16 @@
 </header>
 
 <body>
+<center>
    <?php require "includes/header.php"; ?>
    <h1> Productes </h1>
 
    <body bgcolor="#2AB46">
+
    </body>
 
 </html>
-<style>
-   td {
-      border: 1px solid;
-   }
-</style>
+
 <table>
  <thead> 
   <tr> 
@@ -43,3 +41,5 @@
       ?>
    </tbody>
 </table>
+</center>
+</body>

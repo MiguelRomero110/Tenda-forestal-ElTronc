@@ -2,33 +2,25 @@
 <html lang="es">
     <?php require "includes/head.php";?>
     <body>
+    <center>
         <?php require "includes/header.php";?>
-        <h2>Tenda Forestal El Tronc tot el que necessites<h2>
-        <h9>Tenda per a feines de Forestal</h9>
-        <p>Insertar un Producte per comprar:</p>
+        <h2> Tenda Forestal El Tronc tot el que necessites <h2>
+        <h9>  Tenda per a feines de Forestal </h9>
+        <p>  Insertar un Producte per comprar: </p>
         <form action="insertar_api_producte.php" method="post">
             <div>
-                <lable>
-                    Nom
-                </lable>
-                <input type="text" maxlength="255" required minlenghth="2" name="Nom">
+                <input type="text" placeholder="Nom" maxlength="255" required minlenghth="2" name="Nom">
             </div>
             <div>
-                <lable>
-                    Preu
-                </lable>
-                <input type="number" max="2000" required min="1" name="Preu" step="0.01">
+                <input type="number" placeholder="Preu" max="2000" required min="1" name="Preu" step="0.01">
             </div>
             <div>
-                <lable>
-                    Stock
-                </lable>
-                <input type="number" required min="1" name="Stock">
+                <input type="number" placeholder="Stock" required min="1" name="Stock">
             </div>
-            <div>
+<div>
 <select name="ID_proveidor" required>
 <option value=""></option>
-
+</div>
 <?php
 $query="SELECT ID_proveidor, Nom from proveidor;";
 $result = mysqli_query($bbdd, $query) or die (mysqli_error($bbdd));
@@ -42,15 +34,16 @@ while($proveidor = mysqli_fetch_assoc($result)) {
             </div>
             <div>
                 <label>
-                    Reset
+                    
                 </label>
-                <input type="reset">
+                <input type="reset" value="Reset">
             </div>
             <div>
-            <button type="submit">
+            <button type="submit" value="Enviar">
                 Enviar
             </button>
             </div>
         </form>
     </body>
+    </center>
 </html>
