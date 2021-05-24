@@ -1,7 +1,7 @@
  
 td{
-    color:#000000;
-    border: 1px solid #000000;
+    color:#1c72c2;
+    border: 1px solid #e60404;
     }
 a{
     padding:5px;
@@ -9,10 +9,10 @@ a{
     border:5px solid;    
     }
 
-
-th a{
+a{
+    padding: 5px 5px 5px 5px;
+}
+table a{
     padding: 5px;
-    margin: 5px;
-    border:chocolate 5px solid;
 }
     

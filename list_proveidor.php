@@ -10,10 +10,10 @@
 <form action="list_proveidor.php" method="GET">
     <select name="proveidor">
     <?php
-        $query="SELECT Nom, Poblacio FROM proveidor ORDER BY Nom;";
+        $query="SELECT ID_proveidor, Poblacio FROM proveidor ORDER BY Nom;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
-        echo "<option value=\"$row[Poblacio]\"> $row[Nom] </option>";
+        echo "<option value=\"$row[ID_proveidor]\"> $row[Poblacio] </option>";
     } 
 ?> 
 </select>
@@ -23,7 +23,7 @@
 <table>
     <thead>
         <tr>
-            
+            <th>ID</th>
             <th> Nom </th>
             <th> Adreca </th>
             <th> Codi Posatal </th>
@@ -34,20 +34,18 @@
     </thead>
     <tbody>
 <?php
-$where= "";
-if (isset($_GET["proveidor"])) {
-    $where= "WHERE pd.ID_proveidor = \"$_GET[proveidor]\" ";
-}
-$query= "SELECT pr.*, pd.Nom AS Nomproveidor FROM producte AS pr INNER JOIN proveidor AS pd ON (pr.fkID_proveidor = pd.ID_proveidor)
-    $where ORDER BY pr.Nom;";     
+
+$query= "SELECT * FROM proveidor $where ORDER BY Nom;";     
 $result=mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
 while($row=mysqli_fetch_assoc($result))
     echo"<tr>
+            <td>$row[ID_proveidor]</td>
             <td>$row[Nom]</td>
-            <td>$row[Preu]</td>
-            <td>$row[Stock]</td>
-            <td>$row[fkID_proveidor]</td>
-            <td><a href=\"delete_api_producte.php?ID_producte=$row[ID_producte]\"> Elimina </a></td>
+            <td>$row[Adreca]</td>
+            <td>$row[CP]</td>
+            <td>$row[Poblacio]</td>
+            <td>$row[Telefon]</td>
+            <td><a href=\"delete_api_producte.php?ID_producte=$row[ID_proveidor]\"> Elimina </a></td>
         </tr>"
 ?>
 </tbody>

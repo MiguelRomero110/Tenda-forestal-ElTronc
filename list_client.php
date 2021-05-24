@@ -4,17 +4,16 @@
 <body>
 <?php require "includes/header.php";?>
 
-    <h2> Llistar producte<h2>
+    <h2> Llistar client<h2>
     <h6> Er Serresiete <h6>
     <p>Parrafo no importante <p>
-<body bgcolor="#6AC89">
-<form action="list_producte.php" method="GET">
-    <select name="producte">
+<form action="list_client.php" method="GET">
+    <select name="client">
     <?php
-        $query="SELECT Nom, ID_proveidor FROM proveidor ORDER BY Nom;";
+        $query="SELECT Nom, Poblacio FROM proveidor ORDER BY Nom;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
-        echo "<option value=\"$row[ID_proveidor]\"> $row[Nom] </option>";
+        echo "<option value=\"$row[Poblacio]\"> $row[Nom] </option>";
     } 
 ?> 
 </select>
@@ -23,11 +22,13 @@
 <h1>
 <table>
     <thead>
-        <tr> 
+        <tr>
+            
             <th> Nom </th>
-            <th> Preu </th>
-            <th> Stock </th>
-            <th> ID_proveidor </th>
+            <th> Adreca </th>
+            <th> Codi Posatal </th>
+            <th> Població </th>
+            <th> Telèfon </th>
             <th> Opciones </th>
         </tr>
     </thead>
