@@ -8,12 +8,12 @@
     <h6> Er Serresiete <h6>
     <p>Parrafo no importante <p>
 <form action="list_proveidor.php" method="GET">
-    <select name="proveidor">
+    <select name="Poblacio">
     <?php
-        $query="SELECT ID_proveidor, Poblacio FROM proveidor ORDER BY Nom;";
+        $query="SELECT Poblacio FROM proveidor ORDER BY Nom;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
-        echo "<option value=\"$row[ID_proveidor]\"> $row[Poblacio] </option>";
+        echo "<option value=\"$row[Poblacio]\"> $row[Poblacio] </option>";
     } 
 ?> 
 </select>
@@ -35,7 +35,7 @@
     <tbody>
 <?php
 
-$query= "SELECT * FROM proveidor $where ORDER BY Nom;";     
+$query= "SELECT * FROM proveidor ORDER BY Nom;";     
 $result=mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
 while($row=mysqli_fetch_assoc($result))
     echo"<tr>
