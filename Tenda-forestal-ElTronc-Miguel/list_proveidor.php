@@ -25,6 +25,7 @@
    <th>Adreça</th>
    <th>Telefon</th>
    <th>Poblacio</th>
+   <th>Opcions</th>
   </tr>
   </thead>
    <tbody>
@@ -38,6 +39,7 @@
                   <td>$row[Adreca]</td>
                   <td>$row[Telefon]</td>
                   <td>$row[Poblacio]</td>
+                  <td><a href=\"delete_api_proveidor.php?ID_proveidor=$row[ID_proveidor]\">Elimina</a></td>
                </tr>";
       }
       ?>

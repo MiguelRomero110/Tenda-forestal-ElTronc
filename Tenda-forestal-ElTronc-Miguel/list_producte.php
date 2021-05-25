@@ -25,6 +25,7 @@
    <th>Preu</th>
    <th>Stock</th>
    <th>ID proveidor</th>
+   <th>Opcions</th>
   </tr>
   </thead>
    <tbody>
@@ -37,6 +38,7 @@
                   <td>$row[Preu]</td>
                   <td>$row[Stock]</td>
                   <td>$row[fkID_proveidor]</td>
+                  <td><a href=\"delete_api_producte.php?ID_producte=$row[ID_producte]\">Elimina</a></td>
                </tr>";
       }
       ?>

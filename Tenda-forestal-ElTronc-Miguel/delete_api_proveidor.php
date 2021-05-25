@@ -1,7 +1,6 @@
-
 <?php
 require "includes/mysql.php";
-$query="DELETE FROM producte where ID_producte=\"$_GET[ID_producte]\";";
+$query="DELETE FROM proveidor where ID_proveidor=\"$_GET[ID_proveidor]\";";
 $result=mysqli_query($bbdd,$query);
 
 if($result){
