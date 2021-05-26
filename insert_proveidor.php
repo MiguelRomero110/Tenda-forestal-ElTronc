@@ -1,9 +1,9 @@
 <!Doctype html>
 <html lang="es">
 <?php require "includes/head.php"; ?>
-
+<?php require "includes/header.php"; ?>
+<br><br><br><br><br><br>
 <body>
-    <?php require "includes/header.php"; ?>
     <h2>Insertar Proveidor<h2>
             <h9>Bebesitaaaa uaaaaa</h9>
             <p>Parrafo para los rials</p>

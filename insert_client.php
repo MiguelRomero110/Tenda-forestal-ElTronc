@@ -1,9 +1,10 @@
 <!Doctype html>
 <html lang="es">
-<center>
 <?php require "includes/head.php"; ?>
+<?php require "includes/header.php"; ?>
+<br><br><br><br><br><br>
 <body>
-    <?php require "includes/header.php"; ?>
+
     <h2>Insertar Client<h2>
             <h9>Bebesitaaaa uaaaaa</h9>
             <p>Parrafo para los rials</p>
@@ -58,5 +59,5 @@
                 </div>
             </form>
 </body>
-</center>
+
 </html>

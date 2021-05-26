@@ -1,13 +1,14 @@
 <!DOCTYPE html>
     <html lang= "es">
 <?php require "includes/head.php";?>
+<?php require "includes/header.php"; ?>
+<br><br><br><br><br><br>
 <body>
-<?php require "includes/header.php";?>
 
     <h2> Llistar producte<h2>
     <h6> Er Serresiete <h6>
     <p>Parrafo no importante <p>
-<body bgcolor="#6AC89">
+<body bgcolor="">
 <form action="list_producte.php" method="GET">
     <select name="producte">
     <?php
