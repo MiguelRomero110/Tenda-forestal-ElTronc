@@ -5,7 +5,7 @@
 <br><br><br><br><br><br>
 <body>
 
-    <h2> Llistar producte<h2>
+    <h2> Llistar proveidor<h2>
     <h6> Er Serresiete <h6>
     <p>Parrafo no importante <p>
 <form action="list_proveidor.php" method="GET">
@@ -46,7 +46,7 @@ while($row=mysqli_fetch_assoc($result))
             <td>$row[CP]</td>
             <td>$row[Poblacio]</td>
             <td>$row[Telefon]</td>
-            <td><a href=\"delete_api_producte.php?ID_producte=$row[ID_proveidor]\"> Elimina </a></td>
+            <td><a href=\"delete_api_proveidor.php?ID_producte=$row[ID_proveidor]\"> Elimina </a></td>
         </tr>"
 ?>
 </tbody>

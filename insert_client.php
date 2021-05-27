@@ -1,63 +1,63 @@
 <!Doctype html>
 <html lang="es">
-<?php require "includes/head.php"; ?>
-<?php require "includes/header.php"; ?>
-<br><br><br><br><br><br>
-<body>
+    <?php require "includes/head.php";?>
+    <body>
 
-    <h2>Insertar Client<h2>
-            <h9>Bebesitaaaa uaaaaa</h9>
-            <p>Parrafo para los rials</p>
-            <form action="insertar_api_client.php" method="post">
+    <B><FONT COLOR="red">
+    <center>
+        <?php require "includes/header.php";?>
+        <h2>Tenda Forestal El Tronc tot el que necessites<h2>
+        <h9>Tenda per a feines de Forestal</h9>
+        <HR WIDTH=80% SIZE=5>
+        <p>Crea el teu perfil de client per començar a comprar productes forestals:</p>
+        <form action="insertar_api_client.php" method="post">
             <div>
-                    <lable>
-                        DNI
-                    </lable>
-                    <input type="text" maxlength="9" required minlenghth="9" name="DNI">
-                </div>
-                <div>
-                <div>
-                    <lable>
-                        Nom
-                    </lable>
-                    <input type="text" maxlength="255" required minlenghth="2" name="Nom">
-                </div>
-                <div>
-                    <lable>
-                        Adreca
-                    </lable>
-                    <input type="text" required minlenghth="10" name="Adreça">
-                </div>
-                <div>
-                    <lable>
-                        CP
-                    </lable>
-                    <input type="text" maxlength="7" required minlenghth="1" name="Codi Postal">
-                </div>
-                <div>
-                    <lable>
-                        Poblacio
-                    </lable>
-                    <input type="text" maxlenght="255" required minlenghth="5" name="Població">
-                </div>
-                <div>
-                    <lable>
-                        Telefon
-                    </lable>
-                    <input type="text" maxlenght="12" required minlenghth="9" name="Telefon">
-                </div>
-                <div>
-                    <label>
-                        Reset
-                    </label>
-                    <input type="reset">
-                </div>
-                <div>
-                    <button type="submit">
-                        Enviar
-                    </button>
-                </div>
-            </form>
-</body>
 
+                <input type="text" placeholder="DNI" maxlength="255" required minlenghth="2" name="DNI_client">
+            </div>
+            <div>
+
+                <input type="text" placeholder="CP" max="20000" required min="1" name="CP">
+            </div>
+            <div>
+
+                <input type="text" placeholder="Adreça" required min="10" name="Adreca">
+            </div>
+            <div>
+
+                <input type="text" placeholder="Població" required min="10" name="Poblacio">
+            </div>
+            <div>
+
+                <input type="number" placeholder="Telèfon" max="800000000" required min="600000000" name="Telefon">
+            </div>
+            <div>
+
+         <input type="text" placeholder="Nom" maxlength="255" required minlength="2" name="Nom">
+     </div>
+     <div>
+
+         <input type="text" placeholder="email" maxlength="255" name="email" requirep>
+     </div>
+
+</select>
+            </div>
+            <div>
+                <label>
+
+                </label>
+                <input type="reset">
+            </div>
+            <div>
+            <button type="submit">
+                Enviar
+            </button>
+            </div>
+        </form>
+        </center>
+        </FONT>
+<br>
+        <HR WIDTH=80% SIZE=5>
+        <IMG SRC="" ALIGN=MIDDLE>
+    </body>
 </html>
