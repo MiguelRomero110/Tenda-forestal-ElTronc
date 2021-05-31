@@ -50,7 +50,8 @@
       if (isset($_GET["tenda"])) {
           $where= "WHERE ID_tenda = \"$_GET[tenda]\" ";
       }
-      $query= "SELECT * FROM treballador ORDER BY Nom";
+      $query= "SELECT tr.*, td.Nom AS Nomtenda FROM treballador AS tr INNER JOIN tenda AS td ON (tr.fkID_tenda = td.ID_tenda)
+          $where ORDER BY tr.Nom;";
       $result = mysqli_query($bbdd, $query);
       while ($row = mysqli_fetch_assoc($result)) {
          echo "<tr>
