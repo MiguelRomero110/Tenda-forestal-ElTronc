@@ -9,67 +9,56 @@
 <body>
 <B><FONT COLOR="red">
 <center>
-
    <?php require "includes/header.php"; ?>
-   <h1> Treballadors </h1>
+   <h1> Tendes </h1>
    <HR WIDTH=80% SIZE=5>
-   <body bgcolor="#2AB46">
-
+   <body bgcolor="#68C89">
    </body>
-   <form action="list_treballador.php" method="GET">
-    <select name="treballador">
-    <?php
-        $query="SELECT Nom FROM treballador ORDER BY Nom;";
+   <form action="list_tenda.php" method="GET">
+    <select name="tenda">
+   <?php
+        $query="SELECT Poblacio FROM tenda ORDER BY Nom;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
-        echo "<option value=\"$row[Nom]\"> $row[Nom] </option>";
+        echo "<option value=\"$row[Poblacio]\"> $row[Poblacio] </option>";
     }
     ?>
     </select>
     <button type="submit"> Filtrar </button>
+    </form>
 </html>
 
 <table>
  <thead> 
   <tr> 
    <th>Nom</th>
-   <th>DNI</th>
    <th>CP</th>
    <th>Adreça</th>
-   <th>Població</th>
-   <th>Telèfon</th>
-   <th>Imatge</th>
-   <th>Horari</th>
    <th>ID Tenda</th>
+   <th>Poblacio</th>
    <th>Opcions</th>
+   <th>Imatge</th>
   </tr>
   </thead>
    <tbody>
       <?php
-      $where= "";
-      if (isset($_GET["tenda"])) {
-          $where= "WHERE ID_tenda = \"$_GET[tenda]\" ";
-      }
-      $query= "SELECT * FROM treballador ORDER BY Nom";
+      $query = "SELECT * FROM tenda ORDER BY Nom";
       $result = mysqli_query($bbdd, $query);
       while ($row = mysqli_fetch_assoc($result)) {
          echo "<tr>
                   <td>$row[Nom]</td>
-                  <td>$row[DNI_treballador]</td>
                   <td>$row[CP]</td>
                   <td>$row[Adreca]</td>
+                  <td>$row[ID_tenda]</td>
                   <td>$row[Poblacio]</td>
-                  <td>$row[Telefon]</td>
-                  <td>$row[Horari]</td>
-                  <td>$row[fkID_tenda]</td>
-                  <td><a href=\"delete_api_treballador.php?ID_treballador=$row[ID_treballador]\">Elimina</a></td>
+                  <td><a href=\"delete_api_tenda.php?ID_tenda=$row[ID_tenda]\">Elimina</a></td>
                </tr>";
       }
       ?>
    </tbody>
 </table>
+</center>
 </FONT>
 <br>
-</center>
 <HR WIDTH=80% SIZE=5>
 </body>
