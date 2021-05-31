@@ -4,9 +4,9 @@
 <B><FONT COLOR="red"> 
 <body>
 <center>
-
-<h2> Bienvenido a la tienda </h2>
 <?php require "includes/header.php";?>
+<h2> Bienvenido a la tienda </h2>
+
 <HR WIDTH=80% SIZE=5>
 <title>ElTronc</title>
 

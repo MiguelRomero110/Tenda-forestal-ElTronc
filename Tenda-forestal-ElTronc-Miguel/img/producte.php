@@ -12,7 +12,7 @@
  $nombrearchivo1=$_FILES['Imatge']['name'];
 
  
- if(move_uploaded_file($archive,$directory."/".$nombrearchivo)) { 
+ if(move_uploaded_file($archiv01,$directorio1."/".$nombrearchivo)) { 
 
  $mysql ="INSERT INTO producte (Nom, Preu, Stock, ID_proveidor, Imatge) VALUES (   '" . $_POST['Nom'] . "','" . $_POST['Preu'] . "','" . $_POST['Stock'] . "',   '" . 
  $_FILES['Imatge']['Nom'] . "',   '" . $_POST['ID_proveidor'] . "')"; 

@@ -24,4 +24,10 @@
  <li><a href="insert_client.php">Insertar nou Client</a></li>
  <li><a href="list_client.php">Llista de Clients</a></li>
  </ul>
+ </li>
+ <li><a href="#">Treballador</a>
+ <ul>
+ <li><a href="insert_treballador.php">Insertar nou Treballador</a></li>
+ <li><a href="list_treballador.php">Llista de Treballadors</a></li>
+ </ul>
 </center>
