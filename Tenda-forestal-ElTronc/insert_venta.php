@@ -15,25 +15,31 @@
                     <input type="number" required min="0.01" name="Preu" step="0.01">
                 </div>
                 <div>
+                <lable>
+                    Treballador
+             </lable>
                     <select name="DNI_treballador" required>
                         <option value=""></option>
                         <?php
                         $query = "SELECT DNI_treballador, Nom from treballador;";
                         $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
                         while ($treballador = mysqli_fetch_assoc($result)) {
-                            echo "<option value = \"$treballador[DNI_treballador]\">$treballadror[Nom]</option>";
+                            echo "<option value = \"$treballador[DNI_treballador]\">$treballador[Nom]</option>";
                         }
                         ?>
                     </select>
                 </div>
                 <div>
+                    <lable>
+                        Client
+                    </lable>
                     <select name="DNI_client" required>
                         <option value=""></option>
                         <?php
                         $query = "SELECT DNI_client, Nom from client;";
                         $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
                         while ($client = mysqli_fetch_assoc($result)) {
-                            echo "<option value = \"$client[DNI_client]\">$proveidor[Nom]</option>";
+                            echo "<option value = \"$client[DNI_client]\">$client[Nom]</option>";
                         }
                         ?>
                     </select>

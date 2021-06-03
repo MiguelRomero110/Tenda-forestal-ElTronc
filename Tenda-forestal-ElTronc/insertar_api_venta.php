@@ -1,11 +1,11 @@
 <?php
     require "includes/mysql.php";
     echo "<p> Preu:".$_POST["Preu"]."</p>";
-    echo "<p> Preu:".$_POST["Preu"]."</p>";
-    echo "<p> Stock:".$_POST["Stock"]."</p>";
-    echo "<p> ID_proveidor:".$_POST["ID_proveidor"]."</p>";
-    $query="INSERT INTO producte (Nom, Preu, Stock, fkID_proveidor)
-            VALUES (\"$_POST[Nom]\" , \"$_POST[Preu]\" , \"$_POST[Stock]\" , \"$_POST[ID_proveidor]\");";
+    echo "<p> DNI_treballador:".$_POST["DNI_treballador"]."</p>";
+    echo "<p> DNI_client:".$_POST["DNI_client"]."</p>";
+    echo "<p> Data_venta:".$_POST["Data_venta"]."</p>";
+    $query="INSERT INTO venta (Preu, fkDNI_treballador, fkDNI_client, Data_venta)
+            VALUES (\"$_POST[Preu]\" , \"$_POST[DNI_treballador]\" , \"$_POST[DNI_client]\" , \"$_POST[Data_venta]\");";
             echo $query;
 $result = mysqli_query($bbdd, $query);
 

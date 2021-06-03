@@ -39,7 +39,7 @@ if (isset($_GET["proveidor"])) {
     $where= " WHERE pd.ID_proveidor = \"$_GET[proveidor]\" ";
 }
 $query= "SELECT pr.*, pd.Nom AS Nomproveidor FROM producte AS pr INNER JOIN proveidor AS pd ON (pr.fkID_proveidor = pd.ID_proveidor)
-    $where ORDER BY ID_producte;";     
+    $where ORDER BY ID_producte;";
 $result=mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
 while($row=mysqli_fetch_assoc($result))
     echo"<tr>

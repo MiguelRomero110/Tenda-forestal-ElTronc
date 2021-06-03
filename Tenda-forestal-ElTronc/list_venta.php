@@ -5,16 +5,16 @@
 <br><br><br><br><br><br>
 <body>
 
-    <h2> Llistar proveidor<h2>
+    <h2> Llistar venta<h2>
     <h6> Er Serresiete <h6>
     <p>Parrafo no importante <p>
-<form action="list_proveidor.php" method="GET">
-    <select name="Poblacio">
+<form action="list_venta.php" method="GET">
+    <select name="Data_venta">
     <?php
-        $query="SELECT Poblacio FROM proveidor ORDER BY Nom;";
+        $query="SELECT Data_venta FROM venta ORDER BY Nom;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
-        echo "<option value=\"$row[Poblacio]\"> $row[Poblacio] </option>";
+        echo "<option value=\"$row[Data_venta]\"> $row[Data_venta] </option>";
     } 
 ?> 
 </select>
@@ -25,28 +25,30 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th> Nom </th>
-            <th> Adreca </th>
-            <th> Codi Posatal </th>
-            <th> Població </th>
-            <th> Telèfon </th>
+            <th>Preu</th>
+            <th> DNI_client </th>
+            <th> DNI_treballador </th>
+            <th> Data_venta </th>
             <th> Opciones </th>
         </tr>
     </thead>
     <tbody>
 <?php
-
-$query= "SELECT * FROM proveidor ORDER BY Nom;";     
+$where= "";
+if (isset($_GET["client"])) {
+    $where= " WHERE cl.DNI_client = \"$_GET[client]\" AND WHERE tr.DNI_treballador = \"$_GET[treballador]\"";
+}
+$query= "SELECT ve.*, cl.Nom AS Nomclient, tr.Nom AS Nomtreballador FROM venta AS ve INNER JOIN client AS cl ON (ve.fkDNI_client = cl.DNI_client) INNER JOIN treballador AS tr ON (ve.fkDNI_treballador = tr.DNI_treballador)
+    $where ORDER BY ID_Venta;";     
 $result=mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
 while($row=mysqli_fetch_assoc($result))
     echo"<tr>
-            <td>$row[ID_proveidor]</td>
-            <td>$row[Nom]</td>
-            <td>$row[Adreca]</td>
-            <td>$row[CP]</td>
-            <td>$row[Poblacio]</td>
-            <td>$row[Telefon]</td>
-            <td><a href=\"delete_api_proveidor.php?ID_producte=$row[ID_proveidor]\"> Elimina </a></td>
+            <td>$row[ID_Venta]</td>
+            <td>$row[Preu]</td>
+            <td>$row[fkDNI_client]</td>
+            <td>$row[fkDNI_treballador]</td>
+            <td>$row[Data_venta]</td>
+            <td><a href=\"delete_api_venta.php?ID_Venta=$row[ID_Venta]\"> Elimina </a></td>
         </tr>"
 ?>
 </tbody>
