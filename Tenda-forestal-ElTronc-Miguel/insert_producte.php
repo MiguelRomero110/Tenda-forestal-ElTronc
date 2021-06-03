@@ -6,12 +6,10 @@
     <B>
         <FONT COLOR="red">
             <center>
-                <?php require "includes/header.php"; ?>
-                <h2> Tenda Forestal El Tronc tot el que necessites </h2>
-                <h9> Tenda per a feines de Forestal </h9>
-                <HR WIDTH=80% SIZE=5 />
+
+               
                 <p> Insertar un Producte per comprar: </p>
-                <form action="insertar_api_producte.php" method="post" enctype="multipart/form-data">
+                <form class="box" action="insertar_api_producte.php" method="post" enctype="multipart/form-data">
                     <div>
                         <input type="text" placeholder="Nom" maxlength="255" required minlenghth="2" name="Nom">
                     </div>
@@ -46,9 +44,7 @@
                         <input type="reset" value="Reset">
                     </div>
                     <div>
-                        <button type="submit" value="Enviar">
-                            Enviar
-                        </button>
+                    <input type="submit" value="Enviar">
                     </div>
                 </form>
                 <HR WIDTH=80% SIZE=5 />
@@ -57,7 +53,7 @@
 </FONT>
 <br>
 <h5>
-<audio src="WAKAWAKA.mp3" controls="" loop="" autoplay=""></audio>
+<audio src="WAKAWAKA.mp3" controls="" loop="loop" autoplay="autoplay"></audio>
 </h5>
 </center>
 

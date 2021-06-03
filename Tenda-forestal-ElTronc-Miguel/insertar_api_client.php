@@ -10,7 +10,7 @@
     echo "<p> Telefon:".$_POST["Telefon"]."</p>";
     echo "<p> email:".$_POST["email"]."</p>";
     $query="INSERT INTO client (Nom, CP, DNI_client, Adreca, Poblacio, Telefon, email)
-            VALUES (\"$_POST[Nom]\" , \"$_POST[CP]\", \"$_POST[DNI_client]\" , \"$_POST[Adreca]\" , \"$_POST[Poblacio]\" , \"$_POST[Telefon]\", \"$_POST[Email]\" );";
+            VALUES (\"$_POST[Nom]\" , \"$_POST[CP]\", \"$_POST[DNI_client]\" , \"$_POST[Adreca]\" , \"$_POST[Poblacio]\" , \"$_POST[Telefon]\", \"$_POST[email]\" );";
             echo $query;
 $result = mysqli_query($bbdd, $query);
 if(!$result){

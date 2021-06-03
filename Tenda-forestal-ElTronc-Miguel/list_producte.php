@@ -10,9 +10,9 @@
 <B><FONT COLOR="red">
 <center>
 
-   <?php require "includes/header.php"; ?>
+
    <h1> Productes </h1>
-   <HR WIDTH=80% SIZE=5>
+
    <body bgcolor="#2AB46">
 
    </body>

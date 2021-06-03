@@ -5,12 +5,10 @@
     
     <B><FONT COLOR="red">
     <center>
-        <?php require "includes/header.php";?>
-        <h2>Tenda Forestal El Tronc tot el que necessites<h2>
-        <h9>Tenda per a feines de Forestal</h9>
-        <HR WIDTH=80% SIZE=5>
-        <p>Crea el teu perfil de proveidor per començar a vendre productes forestals:</p>
-        <form action="insertar_api_proveidor.php" method="post">
+
+
+        <p>Creant ja el teu perfil de proveidor per començar a vendre productes forestals:</p>
+        <form class="box" action="insertar_api_proveidor.php" method="post">
             <div>
               
                 <input type="text" placeholder="Nom" maxlength="255" required minlenghth="2" name="Nom">
@@ -41,9 +39,7 @@
                 <input type="reset">
             </div>
             <div>
-            <button type="submit">
-                Enviar
-            </button>
+            <input type="submit" value="Enviar">
             </div>
         </form>
         </center>

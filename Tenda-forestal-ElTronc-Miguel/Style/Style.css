@@ -16,7 +16,7 @@ td{
 #menu ul {
     list-style:none;
     margin: 90;
-    padding:0;
+    padding: 40px;
    }
 
    #menu ul li {
@@ -38,6 +38,7 @@ td{
    #menu ul li {
     position:relative;
     float:left;
+    width: 16%;
     margin:0;
     padding:0;
    }
@@ -52,6 +53,7 @@ td{
     position:absolute;
     top:100%;
     left:0;
+    right:100;
     background:#eee;
     padding:0;
    }
@@ -71,3 +73,5 @@ td{
    #menu ul li:hover > ul {
     display:block;
    }
+
+   

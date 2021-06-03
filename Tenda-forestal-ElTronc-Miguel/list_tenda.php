@@ -9,9 +9,9 @@
 <body>
 <B><FONT COLOR="red">
 <center>
-   <?php require "includes/header.php"; ?>
+
    <h1> Tendes </h1>
-   <HR WIDTH=80% SIZE=5>
+
    <body bgcolor="#68C89">
    </body>
    <form action="list_tenda.php" method="GET">

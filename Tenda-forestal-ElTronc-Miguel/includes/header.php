@@ -1,5 +1,5 @@
 <center>
-<nav id="menu">
+<nav id="menu"><center>
 
 <ul>
  <li><a href="index.php">Index</a></li>
@@ -35,4 +35,5 @@
  <li><a href="insert_tenda.php">Insertar nova Tenda</a></li>
  <li><a href="list_tenda.php">Llista de Tendes</a></li>
  </ul>
+ </nav>
 </center>
