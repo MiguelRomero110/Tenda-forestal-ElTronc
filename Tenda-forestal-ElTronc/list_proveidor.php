@@ -10,8 +10,9 @@
     <p>Parrafo no importante <p>
 <form action="list_proveidor.php" method="GET">
     <select name="Poblacio">
+    <option value="">  </option>
     <?php
-        $query="SELECT Poblacio FROM proveidor ORDER BY Nom;";
+        $query="SELECT DISTINCT Poblacio FROM proveidor ORDER BY Nom;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
         echo "<option value=\"$row[Poblacio]\"> $row[Poblacio] </option>";

@@ -11,6 +11,7 @@
 <body bgcolor="">
 <form action="list_tenda.php" method="GET">
     <select name="tenda">
+    <option value="">  </option>
     <?php
         $query="SELECT Poblacio FROM tenda ORDER BY Nom;";
     $result=mysqli_query($bbdd, $query);

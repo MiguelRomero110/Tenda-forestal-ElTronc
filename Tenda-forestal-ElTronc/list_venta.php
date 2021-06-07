@@ -10,8 +10,9 @@
     <p>Parrafo no importante <p>
 <form action="list_venta.php" method="GET">
     <select name="Data_venta">
+    <option value="">  </option>
     <?php
-        $query="SELECT Data_venta FROM venta ORDER BY Nom;";
+        $query="SELECT Data_venta FROM venta ORDER BY Data_venta;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
         echo "<option value=\"$row[Data_venta]\"> $row[Data_venta] </option>";
@@ -48,7 +49,8 @@ while($row=mysqli_fetch_assoc($result))
             <td>$row[fkDNI_client]</td>
             <td>$row[fkDNI_treballador]</td>
             <td>$row[Data_venta]</td>
-            <td><a href=\"delete_api_venta.php?ID_Venta=$row[ID_Venta]\"> Elimina </a></td>
+            <td><a href=\"list_prod_vent.php?ID_Venta=$row[ID_Venta]\"> Productes venuts</a>
+            <a href=\"delete_api_venta.php?ID_Venta=$row[ID_Venta]\"> Elimina </a></td>
         </tr>"
 ?>
 </tbody>

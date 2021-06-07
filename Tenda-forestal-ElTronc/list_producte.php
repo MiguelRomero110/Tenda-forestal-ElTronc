@@ -11,15 +11,16 @@
 <body bgcolor="">
 <form action="list_producte.php" method="GET">
     <select name="producte">
+    <option value="">  </option>
     <?php
         $query="SELECT Nom, ID_proveidor FROM proveidor ORDER BY Nom;";
-    $result=mysqli_query($bbdd, $query);
-    while ($row= mysqli_fetch_assoc($result)) {
-        echo "<option value=\"$row[ID_proveidor]\"> $row[Nom] </option>";
-    } 
-?> 
+        $result=mysqli_query($bbdd, $query);
+        while ($row= mysqli_fetch_assoc($result)) {
+            echo "<option value=\"$row[ID_proveidor]\"> $row[Nom] </option>";
+        } 
+    ?> 
 </select>
-<button type="submit"> Filtrar </button>
+<button class="Filtrar" type="submit"> Filtrar </button>
 </form>
 <h1>
 <table>

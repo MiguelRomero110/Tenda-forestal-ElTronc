@@ -16,11 +16,12 @@
    </body>
    <form action="list_client.php" method="GET">
     <select name="client">
+    <option value="">  </option>
    <?php
-        $query="SELECT Nom FROM client ORDER BY Nom;";
+        $query="SELECT Poblacio FROM client ORDER BY Poblacio;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
-        echo "<option value=\"$row[Nom]\"> $row[Nom] </option>";
+        echo "<option value=\"$row[Poblacio]\"> $row[Poblacio] </option>";
     }
     ?>
     </select>

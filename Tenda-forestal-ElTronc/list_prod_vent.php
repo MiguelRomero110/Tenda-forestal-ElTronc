@@ -4,16 +4,17 @@
 <?php require "includes/header.php"; ?>
 <br><br><br><br><br><br>
 <body>
-
-    <h2> Llistar Prod_vent<h2>
-    <h6> Er Serresiete <h6>
-    <p>Parrafo no importante <p>
-
+<h2>
+                <?php
+                $query = "SELECT * FROM venta WHERE ID_Venta = \"$_GET[ID_Venta]\";  ";
+                $result = mysqli_query($bbdd, $query);
+                $venta = mysqli_fetch_assoc($result);
+                echo " Llista de productes de la venta:  $venta[ID_Venta]";
+                ?>
+            </h2>
 <h1>
 <table>
     <thead>
-        <tr>
-            <th>ID_Prod_vent</th>
             <th> fkID_venta </th>
             <th> fkID_producte </th>
         </tr>
@@ -22,22 +23,15 @@
 <?php
 $where= "";
 if (isset($_GET["prod_vent"])) {
-    $where= " WHERE ve.ID_venta = \"$_GET[venta]\", WHERE pd.ID_producte = \"$_GET[producte]\" ";
+    $where= " WHERE ve.ID_Venta = \"$_GET[venta]\" AND WHERE pd.ID_producte = \"$_GET[producte]\" ";
 }
-$query= "SELECT tr.*, td.Nom AS Nomtenda FROM treballador AS tr INNER JOIN tenda AS td ON (tr.fkID_tenda = td.ID_tenda)
-    $where ORDER BY ID_tenda;";     
+$query= "SELECT pv.*, ve.ID_Venta, pd.ID_producte, pd.Nom FROM prod_vent AS pv INNER JOIN venta AS ve ON (pv.fkID_venta = ve.ID_Venta) INNER JOIN producte AS pd ON (pv.fkID_producte = pd.ID_producte)
+    $where ORDER BY ID_Venta;";     
 $result=mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
 while($row=mysqli_fetch_assoc($result))
     echo"<tr>
-            <td>$row[DNI_treballador]</td>
+            <td>$row[fkID_venta]</td>
             <td>$row[Nom]</td>
-            <td>$row[Adreca]</td>
-            <td>$row[CP]</td>
-            <td>$row[Poblacio]</td>
-            <td>$row[Telefon]</td>
-            <td>$row[Horari]</td>
-            <td>$row[fkID_tenda]</td>
-            <td><a href=\"delete_api_treballador.php?DNI_treballador=$row[DNI_treballador]\"> Elimina </a></td>
         </tr>"
 ?>
 </tbody>

@@ -10,6 +10,7 @@
     <p>Parrafo no importante <p>
 <form action="list_treballador.php" method="GET">
     <select name="ID_tenda">
+    <option value="">  </option>
     <?php
         $query="SELECT Poblacio FROM treballador ORDER BY Nom;";
     $result=mysqli_query($bbdd, $query);

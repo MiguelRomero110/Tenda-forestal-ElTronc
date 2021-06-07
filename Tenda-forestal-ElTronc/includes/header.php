@@ -42,13 +42,6 @@
 </ul>
 
 </li>
-<li><a href="#">Producte-Venta</a>
-
-<ul>
-<li><a href="list_prod_vent.php">Llista de Producte-Venta</a></li>
-</ul>
-
-</li>
 <li><a href="#">Venta</a>
 
 <ul>

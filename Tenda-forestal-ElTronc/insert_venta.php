@@ -51,6 +51,19 @@
                     <input type="date" name="Data_venta">
                 </div>
                 <div>
+                <p>Productes comprats</p>
+                        <?php
+                        $query = "SELECT * FROM producte order by Nom";
+                        $result = mysqli_query($bbdd,$query);
+                        while($prod = mysqli_fetch_assoc($result)){
+                            echo "<div>
+                                    <input type='checkbox' name='producteVenta[]' value='$prod[ID_producte]'/>
+                                    <label>$prod[Nom] - ($prod[Preu]€)</label>
+                                  </div>";
+                        }
+                        ?>
+                </div>
+                <div>
                     <label>
                         Reset
                     </label>
