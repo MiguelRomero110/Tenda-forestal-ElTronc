@@ -13,9 +13,9 @@
     <option value="">  </option>
     <?php
         $query="SELECT Data_venta FROM venta ORDER BY Data_venta;";
-    $result=mysqli_query($bbdd, $query);
-    while ($row= mysqli_fetch_assoc($result)) {
-        echo "<option value=\"$row[Data_venta]\"> $row[Data_venta] </option>";
+    $result = mysqli_query ($bbdd, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<option value = \"$row[Data_venta]\"> $row[Data_venta] </option>";
     } 
 ?> 
 </select>

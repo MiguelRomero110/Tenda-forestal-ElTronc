@@ -10,7 +10,7 @@
     <p>Parrafo no importante <p>
 <body bgcolor="">
 <form action="list_producte.php" method="GET">
-    <select name="producte">
+    <select name="proveidor">
     <option value="">  </option>
     <?php
         $query="SELECT Nom, ID_proveidor FROM proveidor ORDER BY Nom;";
@@ -21,7 +21,12 @@
     ?> 
 </select>
 <button class="Filtrar" type="submit"> Filtrar </button>
+<br>
+<h2>
+<a href="list_producte.php">Reset</a>
+    </h2>
 </form>
+
 <h1>
 <table>
     <thead>
@@ -48,7 +53,8 @@ while($row=mysqli_fetch_assoc($result))
             <td>$row[Preu]</td>
             <td>$row[Stock]</td>
             <td>$row[fkID_proveidor]</td>
-            <td><a href=\"delete_api_producte.php?ID_producte=$row[ID_producte]\"> Elimina </a></td>
+            <td><a href=\"delete_api_producte.php?ID_producte=$row[ID_producte]\"> Elimina</a>
+            <a href=\"insert_producte.php?ID_producte=$row[ID_producte]\"> Edita</a></td>
         </tr>"
 ?>
 </tbody>

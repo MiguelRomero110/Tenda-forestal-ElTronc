@@ -4,6 +4,6 @@
 <meta charset="UTF-8">
 <meta name="title" content="ElTronc">
 <meta name="description" content="Tenda de forestal">
-<link href="Style/Style.css?v0.3" rel="stylesheet">
+<link href="Style/Style.css?v0.6" rel="stylesheet">
 
 </head>

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
-
+    <html lang= "es">
 <?php require "includes/head.php";?>
-<header>
-  
-</header>
+<?php require "includes/header.php"; ?>
+<br><br><br><br><br><br>
+<body>
+
+    <h2> Llistar clients<h2>
+    <h6> Er Serresiete <h6>
+    <p>Parrafo no importante <p>
 
 <body>
-<B><FONT COLOR="red">
-<center>
-   <?php require "includes/header.php"; ?>
-   <h1> Proveidors </h1>
-   <HR WIDTH=80% SIZE=5>
-   <body bgcolor="#68C89">
+   
+   <h1> Clients </h1>
    </body>
    <form action="list_client.php" method="GET">
-    <select name="client">
+    <select name="Poblacio">
     <option value="">  </option>
    <?php
         $query="SELECT Poblacio FROM client ORDER BY Poblacio;";
@@ -27,9 +26,7 @@
     </select>
     <button type="submit"> Filtrar </button>
     </form>
-
-</html>
-
+<h1>
 <table>
  <thead> 
   <tr> 
@@ -45,7 +42,11 @@
   </thead>
    <tbody>
       <?php
-      $query = "SELECT * FROM client ORDER BY Nom";
+      $where= "";
+      if (isset($_GET["Poblacio"])) {
+          $where = " WHERE Poblacio = \"$_GET[Poblacio]\" ";
+      }
+      $query = "SELECT * FROM client $where ORDER BY Nom";
       $result = mysqli_query($bbdd, $query);
       while ($row = mysqli_fetch_assoc($result)) {
          echo "<tr>
@@ -62,8 +63,7 @@
       ?>
    </tbody>
 </table>
-</center>
-</FONT>
 <br>
-<HR WIDTH=80% SIZE=5>
 </body>
+<h1>
+    </html>

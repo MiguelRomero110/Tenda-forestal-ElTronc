@@ -9,10 +9,10 @@
     <h6> Er Serresiete <h6>
     <p>Parrafo no importante <p>
 <form action="list_treballador.php" method="GET">
-    <select name="ID_tenda">
+    <select name="Poblacio">
     <option value="">  </option>
     <?php
-        $query="SELECT Poblacio FROM treballador ORDER BY Nom;";
+        $query="SELECT Poblacio FROM treballador ORDER BY Poblacio;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
         echo "<option value=\"$row[Poblacio]\"> $row[Poblacio] </option>";
@@ -39,8 +39,8 @@
     <tbody>
 <?php
 $where= "";
-if (isset($_GET["tenda"])) {
-    $where= " WHERE td.ID_tenda = \"$_GET[tenda]\" ";
+if (isset($_GET["Poblacio"])) {
+    $where= " WHERE tr.Poblacio = \"$_GET[Poblacio]\" ";
 }
 $query= "SELECT tr.*, td.Nom AS Nomtenda FROM treballador AS tr INNER JOIN tenda AS td ON (tr.fkID_tenda = td.ID_tenda)
     $where ORDER BY ID_tenda;";     

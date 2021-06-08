@@ -7,7 +7,6 @@ $query = "INSERT INTO venta (Preu, fkDNI_treballador, fkDNI_client, Data_venta)
           VALUES (\"$_POST[Preu]\" , \"$_POST[DNI_treballador]\" , \"$_POST[DNI_client]\" , \"$_POST[Data_venta]\");";
 $result = mysqli_query($bbdd, $query);
 
-if ($result) {
 
     //Recull el darrer ID insertat
     $query = "SELECT MAX(ID_Venta) as maxim FROM venta";
@@ -21,6 +20,11 @@ if ($result) {
             mysqli_query($bbdd, $query);
         }
     }
-}
 
+if(!$result){
+    $error = (mysqli_error($bbdd));
+    header('Location: error.php?error=' . $error);
+}else{
+    header('Location: ok.php');
+}
 

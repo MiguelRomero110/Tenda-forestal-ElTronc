@@ -10,10 +10,10 @@
     <p>Parrafo no importante <p>
 <body bgcolor="">
 <form action="list_tenda.php" method="GET">
-    <select name="tenda">
+    <select name="Poblacio">
     <option value="">  </option>
     <?php
-        $query="SELECT Poblacio FROM tenda ORDER BY Nom;";
+        $query="SELECT Poblacio FROM tenda ORDER BY Poblacio;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
         echo "<option value=\"$row[Poblacio]\"> $row[Poblacio] </option>";
@@ -35,7 +35,11 @@
     </thead>
     <tbody>
 <?php
-$query= "SELECT * FROM tenda ORDER BY Nom;";     
+$where= "";
+if (isset($_GET["Poblacio"])) {
+    $where = " WHERE Poblacio = \"$_GET[Poblacio]\" ";
+}
+$query= "SELECT * FROM tenda $where ORDER BY Nom;";     
 $result=mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
 while($row=mysqli_fetch_assoc($result))
     echo"<tr>

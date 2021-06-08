@@ -8,5 +8,10 @@
             VALUES (\"$_POST[Nom]\" , \"$_POST[Preu]\" , \"$_POST[Stock]\" , \"$_POST[ID_proveidor]\");";
             echo $query;
 $result = mysqli_query($bbdd, $query);
-
+if(!$result){
+    $error = (mysqli_error($bbdd));
+    header('Location: error.php?error=' . $error);
+}else{
+    header('Location: ok.php');
+}
 ?>

@@ -12,7 +12,7 @@
     <select name="Poblacio">
     <option value="">  </option>
     <?php
-        $query="SELECT DISTINCT Poblacio FROM proveidor ORDER BY Nom;";
+        $query="SELECT DISTINCT Poblacio FROM proveidor ORDER BY Poblacio;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
         echo "<option value=\"$row[Poblacio]\"> $row[Poblacio] </option>";
@@ -36,8 +36,11 @@
     </thead>
     <tbody>
 <?php
-
-$query= "SELECT * FROM proveidor ORDER BY Nom;";     
+$where= "";
+if (isset($_GET["Poblacio"])) {
+    $where= " WHERE Poblacio = \"$_GET[Poblacio]\" ";
+}
+$query= "SELECT * FROM proveidor $where ORDER BY Nom;";     
 $result=mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
 while($row=mysqli_fetch_assoc($result))
     echo"<tr>
@@ -47,7 +50,8 @@ while($row=mysqli_fetch_assoc($result))
             <td>$row[CP]</td>
             <td>$row[Poblacio]</td>
             <td>$row[Telefon]</td>
-            <td><a href=\"delete_api_proveidor.php?ID_proveidor=$row[ID_proveidor]\"> Elimina </a></td>
+            <td><a href=\"delete_api_proveidor.php?ID_proveidor=$row[ID_proveidor]\"> Elimina </a>
+            <a href=\"insert_proveidor.php?ID_proveidor=$row[ID_proveidor]\"> Edita</a></td>
         </tr>"
 ?>
 </tbody>

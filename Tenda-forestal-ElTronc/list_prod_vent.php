@@ -22,8 +22,8 @@
     <tbody>
 <?php
 $where= "";
-if (isset($_GET["prod_vent"])) {
-    $where= " WHERE ve.ID_Venta = \"$_GET[venta]\" AND WHERE pd.ID_producte = \"$_GET[producte]\" ";
+if (isset($_GET["ID_Venta"])) {
+    $where= " WHERE ve.ID_Venta = \"$_GET[ID_Venta]\" ";
 }
 $query= "SELECT pv.*, ve.ID_Venta, pd.ID_producte, pd.Nom FROM prod_vent AS pv INNER JOIN venta AS ve ON (pv.fkID_venta = ve.ID_Venta) INNER JOIN producte AS pd ON (pv.fkID_producte = pd.ID_producte)
     $where ORDER BY ID_Venta;";     
