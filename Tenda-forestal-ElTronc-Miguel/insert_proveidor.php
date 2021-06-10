@@ -3,7 +3,7 @@
     <?php require "includes/head.php";?>
     <body>
     
-    <B><FONT COLOR="red">
+    <B><FONT COLOR="#802A00">
     <center>
 
 

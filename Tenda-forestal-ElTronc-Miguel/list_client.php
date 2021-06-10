@@ -7,7 +7,7 @@
 </header>
 
 <body>
-<B><FONT COLOR="red">
+<B><FONT COLOR="#802A00">
 <center>
 
    <h1> Proveidors </h1>

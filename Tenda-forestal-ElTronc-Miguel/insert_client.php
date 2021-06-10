@@ -1,9 +1,10 @@
 <!Doctype html>
 <html lang="es">
     <?php require "includes/head.php";?>
+    <HR WIDTH=80% SIZE=5>
     <body>
 
-    <B><FONT COLOR="red">
+    <B><FONT COLOR="#802A00">
     <center>
    
 

@@ -4,11 +4,11 @@
 
 <body>
     <B>
-        <FONT COLOR="red">
+        <FONT COLOR="#802A00"> </b>
             <center>
 
-               
-                <p> Insertar un Producte per comprar: </p>
+            <HR WIDTH=80% SIZE=5 />
+                <h1> Insertar un Producte per comprar: </h1>
                 <form class="box" action="insertar_api_producte.php" method="post" enctype="multipart/form-data">
                     <div>
                         <input type="text" placeholder="Nom" maxlength="255" required minlenghth="2" name="Nom">
