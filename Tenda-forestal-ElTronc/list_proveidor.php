@@ -1,13 +1,13 @@
 <!DOCTYPE html>
     <html lang= "es">
 <?php require "includes/head.php";?>
-<?php require "includes/header.php"; ?>
-<br><br><br><br><br><br>
+
+<title>ElTronc</title>
+<center>
 <body>
 
-    <h2> Llistar proveidor<h2>
-    <h6> Er Serresiete <h6>
-    <p>Parrafo no importante <p>
+    <h2> Llistar proveidor</h2>
+    <p>Proveïdors disponibles </p>
 <form action="list_proveidor.php" method="GET">
     <select name="Poblacio">
     <option value="">  </option>
@@ -20,15 +20,16 @@
 ?> 
 </select>
 <button type="submit"> Filtrar </button>
+<button><a href="list_proveidor.php">Reset</a></button>
+<HR WIDTH=0% SIZE=0 />
 </form>
-<h1>
 <table>
     <thead>
         <tr>
             <th>ID</th>
             <th> Nom </th>
             <th> Adreca </th>
-            <th> Codi Posatal </th>
+            <th> Codi Postal </th>
             <th> Població </th>
             <th> Telèfon </th>
             <th> Opciones </th>
@@ -50,10 +51,9 @@ while($row=mysqli_fetch_assoc($result))
             <td>$row[CP]</td>
             <td>$row[Poblacio]</td>
             <td>$row[Telefon]</td>
-            <td><a href=\"delete_api_proveidor.php?ID_proveidor=$row[ID_proveidor]\"> Elimina </a>
-            <a href=\"insert_proveidor.php?ID_proveidor=$row[ID_proveidor]\"> Edita</a></td>
+            <td><button><a href=\"delete_api_proveidor.php?ID_proveidor=$row[ID_proveidor]\"> Elimina </a></button>
+            <button><a href=\"insert_proveidor.php?ID_proveidor=$row[ID_proveidor]\"> Edita</a></button></td>
         </tr>"
 ?>
 </tbody>
-</table>
-</h1>
+</table></center>

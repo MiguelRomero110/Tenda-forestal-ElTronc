@@ -1,79 +1,97 @@
 <!Doctype html>
 <html lang="es">
 <?php require "includes/head.php"; ?>
-<?php require "includes/header.php"; ?>
-<br><br><br><br><br><br>
+
+<title>ElTronc</title>
+<center>
 <body>
-    <h2>Insertar Treballador<h2>
-            <h9>Bebesitaaaa uaaaaa</h9>
-            <p>Parrafo para los rials</p>
-            <form action="insertar_api_treballador.php" method="post">
+    <h2>Insertar Treballador</h2>
+            <p>Insertar les dades del nou treballador</p>
+            
+            <?php
+        $dni_treballador = '';
+        $nom = '';
+        $adreca = '';
+        $cp = '';
+        $poblacio = '';
+        $telefon = '';
+        $horari = '';
+        $fkID_tenda = '';
+
+        if (isset($_GET['DNI_treballador'])) {
+            $query = "SELECT * FROM treballador WHERE DNI_treballador = \"$_GET[DNI_treballador]\";";
+            $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+            $treballador = mysqli_fetch_assoc($result);
+            if ($treballador["DNI_treballador"]) {
+                $dni_treballador = $treballador["DNI_treballador"];
+                $nom = $treballador["Nom"];
+                $adreca = $treballador["Adreca"];
+                $cp = $treballador["CP"];
+                $poblacio = $treballador["Poblacio"];
+                $telefon = $treballador["Telefon"];
+                $horari = $treballador["Horari"];
+                $fkID_tenda = $treballador["fkID_tenda"];
+            }
+        }
+        ?>
+        <div>
+            <?php
+                if ($dni_treballador) {
+                    echo '<h2> Actualitzant el treballador amb DNI: ' . $dni_treballador . '</h2>';
+                } else {
+                    echo '<h2> Inserta un nou treballador </h2>';
+                }
+            ?>
+        </div>
+        <form class="box" action="<?= ($dni_treballador) ? "update_api_treballador.php?id=$dni_treballador" : 'insertar_api_treballador.php' ?>" method="post" enctype="multipart/form-data">
                  <div>
-                    <lable>
-                        DNI
-                    </lable>
-                    <input type="text" maxlength="9" required minlenghth="9" name="DNI_treballador">
+                    <input type="text" maxlength="9" required minlenghth="9" placeholder="DNI" name="DNI_treballador" value="<?=$dni_treballador?>">
                 </div>
                 <div>
-                    <lable>
-                        Nom
-                    </lable>
-                    <input type="text" maxlength="255" required minlenghth="2" name="Nom">
+                    <input type="text" maxlength="255" placeholder="Nom" required minlenghth="2" name="Nom" value="<?=$nom?>">
                 </div>
                 <div>
-                    <lable>
-                        Adreca
-                    </lable>
-                    <input type="text" required minlenghth="10" name="Adreca">
+                    <input type="text" required minlenghth="10" placeholder="Adreça" name="Adreca" value="<?=$adreca?>">
                 </div>
                 <div>
-                    <lable>
-                        CP
-                    </lable>
-                    <input type="text" maxlength="7" required minlenghth="1" name="CP">
+                    <input type="text" maxlength="7" placeholder="Codi postal" required minlenghth="1" name="CP" value="<?=$cp?>">
                 </div>
                 <div>
-                    <lable>
-                        Poblacio
-                    </lable>
-                    <input type="text" maxlenght="255" required minlenghth="5" name="Poblacio">
+                    <input type="text" maxlenght="255" placeholder="Població" required minlenghth="5" name="Poblacio" value="<?=$poblacio?>">
                 </div>
                 <div>
-                    <lable>
-                        Telefon
-                    </lable>
-                    <input type="text" maxlength="9" required minlenghth="9" name="Telefon">
+                    <input type="text" maxlength="9" placeholder="Telèfon" required minlenghth="9" name="Telefon" value="<?=$telefon?>">
                 </div>
                 <div>
-                    <lable>
-                        Horari
-                    </lable>
-                    <input type="text" maxlength="11" required minlenghth="11" name="Horari">
+                    <input type="text" maxlength="11" placeholder="Horari" required minlenghth="11" name="Horari" value="<?=$horari?>">
                 </div>
                 <div>
-                    <select name="ID_tenda" required>
+                    <label>
+                        Tendes
+                    </label>
+                    <select aria-placeholder="Tendes" name="ID_tenda" required >
                         <option value=""></option>
                         <?php
-                        $query = "SELECT ID_tenda, Nom from tenda;";
+                        $query = "SELECT DISTINCT ID_tenda, Nom from tenda;";
                         $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
                         while ($tenda = mysqli_fetch_assoc($result)) {
                             echo "<option value = \"$tenda[ID_tenda]\"> $tenda[Nom]</option>";
+                            $selected = '';
+                            if($tenda['ID_tenda'] == $fkID_tenda){
+                                $selected = 'selected';
+                            }
+                            echo "<option $selected value=\"$tenda[ID_tenda]\">$tenda[Nom]</option>";
                         }
                         ?>
                     </select>
                 </div>
                 <div>
-                    <label>
-                        Reset
-                    </label>
                     <input type="reset">
                 </div>
                 <div>
-                    <button type="submit">
-                        Enviar
-                    </button>
+                    <input type="submit" value="Enviar">
                 </div>
             </form>
 </body>
 
-</html>
+</html></center>

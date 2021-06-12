@@ -1,63 +1,77 @@
 <!Doctype html>
 <html lang="es">
     <?php require "includes/head.php";?>
+ 
+    <title>ElTronc</title>
     <body>
 
-    <B><FONT COLOR="red">
-    <center>
-        <?php require "includes/header.php";?>
-        <h2>Tenda Forestal El Tronc tot el que necessites<h2>
-        <h9>Tenda per a feines de Forestal</h9>
-        <HR WIDTH=80% SIZE=5>
+        <center>
+        <h2>Tenda Forestal El Tronc tot el que necessites</h2>
         <p>Crea el teu perfil de client per començar a comprar productes forestals:</p>
-        <form action="insertar_api_client.php" method="post">
-            <div>
-
-                <input type="text" placeholder="DNI" maxlength="9" required minlenghth="2" name="DNI_client">
+        </center>
+        <?php
+        $dni_client = '';
+        $nom = '';
+        $adreca = '';
+        $cp = '';
+        $poblacio = '';
+        $telefon = '';
+        $email = '';
+        if (isset($_GET['DNI_client'])) {
+            $query = "SELECT * FROM client WHERE DNI_client = \"$_GET[DNI_client]\";";
+            $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+            $client = mysqli_fetch_assoc($result);
+            if ($client["DNI_client"]) {
+                $dni_client = $client["DNI_client"];
+                $nom = $client["Nom"];
+                $adreca = $client["Adreca"];
+                $cp = $client["CP"];
+                $poblacio = $client["Poblacio"];
+                $telefon = $client["Telefon"];
+                $email = $client["email"];
+            }
+        }
+        ?>
+        <center>
+        <div>
+            <?php
+                if ($dni_client) {
+                    echo '<h2> Actualitzant el client amb DNI: ' . $dni_client . '</h2>';
+                } else {
+                    echo '<h2> Inserta un nou client </h2>';
+                }
+            ?></center>
+        </div>
+        <form class="box"  action="<?= ($dni_client) ? "update_api_client.php?id=$dni_client" : 'insertar_api_client.php' ?>" method="post" enctype="multipart/form-data">
+        <div>
+                <input type="text" maxlength="9" placeholder="DNI" required minlenghth="2" name="DNI_client" value="<?=$dni_client?>">
             </div>
             <div>
-
-                <input type="text" placeholder="CP" max="9" required min="1" name="CP">
+                <input type="text" max="9" placeholder="CP" required min="1" name="CP" value="<?=$cp?>">
             </div>
             <div>
-
-                <input type="text" placeholder="Adreça" required min="10" name="Adreca">
+                <input type="text" required min="10" placeholder="Adreça" name="Adreca" value="<?=$adreca?>">
             </div>
             <div>
-
-                <input type="text" placeholder="Població" required min="10" name="Poblacio">
+                <input type="text" required min="10" placeholder="Població" name="Poblacio" value="<?=$poblacio?>">
             </div>
             <div>
-
-                <input type="text" placeholder="Telèfon" maxlength="9" required min="9" name="Telefon">
+                <input type="text" maxlength="9" placeholder="Telèfon" required min="9" name="Telefon" value="<?=$telefon?>">
             </div>
             <div>
-
-         <input type="text" placeholder="Nom" maxlength="255" required minlength="2" name="Nom">
+         <input type="text" maxlength="255" placeholder="Nom" required minlength="2" name="Nom" value="<?=$nom?>">
      </div>
      <div>
-
-         <input type="text" placeholder="email" maxlength="255" name="email" requirep>
+         <input type="text" maxlength="255" placeholder="Email" name="email" requirep value="<?=$email?>">
      </div>
-
 </select>
             </div>
             <div>
-                <label>
-
-                </label>
                 <input type="reset">
             </div>
             <div>
-            <button type="submit">
-                Enviar
-            </button>
+            <input type="submit" value="Enviar">
             </div>
         </form>
-        </center>
-        </FONT>
-<br>
-        <HR WIDTH=80% SIZE=5>
-        <IMG SRC="" ALIGN=MIDDLE>
     </body>
 </html>

@@ -1,4 +1,19 @@
- 
+
+label{
+    color: #802a00;
+}
+h1{
+    color: #802a00;
+}
+p{
+    color: #802a00;
+}
+h2{
+    color: #802a00;
+}
+h4{
+    color: #802a00;
+}
 td{
     color: #802a00;
     border: 5px solid rgb(35, 228, 109);
@@ -16,19 +31,18 @@ a{
     margin:5px;   
     }
     html {
-        background-image: url("../Imatges/");
+        background-image: url("../Imatges/suuu.jpeg");
     }
 
 table a{
     padding: 5px;
 }
-
 /* menu */
 
 #menu ul {
     list-style:none;
-    margin: 90;
-    padding:0;
+    margin: 0;
+    padding:20px;
    }
    
    /* items del menu */
@@ -41,10 +55,10 @@ table a{
    
    #menu ul a {
     display:block;
-    color:#fff;
+    color: #802a00;
     text-decoration:none;
     font-weight:400;
-    font-size:15px;
+    font-size:10px;
     padding:10px;
     font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform:uppercase;
@@ -56,6 +70,7 @@ table a{
    #menu ul li {
     position:relative;
     float:left;
+    width: 14%;
     margin:0;
     padding:0;
    }
@@ -81,7 +96,7 @@ table a{
    
    #menu ul ul li {
     float:none;
-    width:150px
+    width: 230px;;
    }
    
    /* enlaces de los items del menu desplegable */

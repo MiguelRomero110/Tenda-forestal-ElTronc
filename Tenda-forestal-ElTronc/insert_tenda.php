@@ -1,47 +1,58 @@
 <!Doctype html>
 <html lang="es">
 <?php require "includes/head.php"; ?>
-<?php require "includes/header.php"; ?>
-<br><br><br><br><br><br>
-<body>
-    <h2>Insertar Tenda<h2>
-            <h9>Bebesitaaaa uaaaaa</h9>
-            <p>Parrafo para los rials</p>
-            <form action="insertar_api_tenda.php" method="post">
+
+<title>ElTronc</title>
+<body><center>
+    <h2>Insertar Tenda</h2>
+            <p>Inserta les dades de la nova tenda</p>
+            <?php
+        $id_tenda = '';
+        $nom = '';
+        $adreca = '';
+        $codi_postal = '';
+        $poblacio = '';
+        if (isset($_GET['ID_tenda'])) {
+            $query = "SELECT * FROM tenda WHERE ID_tenda = \"$_GET[ID_tenda]\";";
+            $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+            $tenda = mysqli_fetch_assoc($result);
+            if ($tenda["ID_tenda"]) {
+                $id_tenda = $tenda["ID_tenda"];
+                $nom = $tenda["Nom"];
+                $adreca = $tenda["Adreca"];
+                $codi_postal = $tenda["Codi_Postal"];
+                $poblacio = $tenda["Poblacio"];
+            }
+        }
+        ?>
+        <div>
+            <?php
+                if ($id_tenda) {
+                    echo '<h2> Actualitzant la tenda amb ID: ' . $id_tenda . '</h2>';
+                } else {
+                    echo '<h2> Inserta una nova tenda </h2>';
+                }
+            ?></center>
+        </div>
+        <form class="box" action="<?= ($id_tenda) ? "update_api_tenda.php?id=$id_tenda" : 'insertar_api_tenda.php' ?>" method="post" enctype="multipart/form-data">
                 <div>
-                    <lable>
-                        Nom
-                    </lable>
-                    <input type="text" maxlength="255" required minlenghth="2" name="Nom">
+                    <input type="text" maxlength="255" placeholder="Nom" required minlenghth="2" name="Nom" value="<?=$nom?>">
                 </div>
                 <div>
-                    <lable>
-                        Adreça
-                    </lable>
-                    <input type="text"  required minlenghth="1" name="Adreca">
+                    <input type="text"  required minlenghth="1" placeholder="Adreça" name="Adreca" value="<?=$adreca?>">
                 </div>
                 <div>
-                    <lable>
-                        Codi Postal
-                    </lable>
-                    <input type="text" maxlength="10" required minlenghth="1" name="Codi_Postal">
+                    <input type="text" maxlength="10" placeholder="Codi Postal" required minlenghth="1" name="Codi_Postal" value="<?=$codi_postal?>">
                 </div>
                 <div>
-                    <lable>
-                        Poblacio
-                    </lable>
-                    <input type="text" required minlenghth="1" name="Poblacio">
+                    <input type="text" required minlenghth="1" placeholder="Població" name="Poblacio" value="<?=$poblacio?>">
                 </div>
                 <div>
-                    <label>
-                        Reset
-                    </label>
                     <input type="reset">
                 </div>
                 <div>
-                    <button type="submit">
-                        Enviar
-                    </button>
+                    <input type="submit" value="Enviar">
+
                 </div>
             </form>
 </body>

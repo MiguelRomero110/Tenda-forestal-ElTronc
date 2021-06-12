@@ -1,13 +1,14 @@
 <!DOCTYPE html>
     <html lang= "es">
 <?php require "includes/head.php";?>
-<?php require "includes/header.php"; ?>
-<br><br><br><br><br><br>
+
+
+<title>ElTronc</title>
 <body>
 
-    <h2> Llistar producte<h2>
-    <h6> Er Serresiete <h6>
-    <p>Parrafo no importante <p>
+<center>
+    <h2> Llistar producte</h2>
+    <p>Tots els productes disponibles </p>
 <body bgcolor="">
 <form action="list_producte.php" method="GET">
     <select name="proveidor">
@@ -21,20 +22,18 @@
     ?> 
 </select>
 <button class="Filtrar" type="submit"> Filtrar </button>
-<br>
-<h2>
-<a href="list_producte.php">Reset</a>
-    </h2>
+<button><a href="list_producte.php">Reset</a></button>
+<HR WIDTH=0% SIZE=0 />
 </form>
 
-<h1>
 <table>
     <thead>
         <tr> 
             <th> Nom </th>
             <th> Preu </th>
             <th> Stock </th>
-            <th> ID_proveidor </th>
+            <th> ID Proveïdor </th>
+            <th> Imatge </th>
             <th> Opciones </th>
         </tr>
     </thead>
@@ -53,10 +52,11 @@ while($row=mysqli_fetch_assoc($result))
             <td>$row[Preu]</td>
             <td>$row[Stock]</td>
             <td>$row[fkID_proveidor]</td>
-            <td><a href=\"delete_api_producte.php?ID_producte=$row[ID_producte]\"> Elimina</a>
-            <a href=\"insert_producte.php?ID_producte=$row[ID_producte]\"> Edita</a></td>
+            <td><img src=\"Imatges/productes/$row[imatge] \" width=\"80\"></td>
+            <td><button><a href=\"delete_api_producte.php?ID_producte=$row[ID_producte]\"> Elimina</a></button>
+            <button><a href=\"insert_producte.php?ID_producte=$row[ID_producte]\"> Edita</a></button></td>
         </tr>"
 ?>
 </tbody>
 </table>
-</h1>
+</center>

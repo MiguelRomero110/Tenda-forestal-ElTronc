@@ -1,23 +1,22 @@
 <!DOCTYPE html>
     <html lang= "es">
 <?php require "includes/head.php";?>
-<?php require "includes/header.php"; ?>
-<br><br><br><br><br><br>
+
+<title>ElTronc</title>
+<center>
 <body>
 
-    <h2> Llistar clients<h2>
-    <h6> Er Serresiete <h6>
-    <p>Parrafo no importante <p>
+    <h2> Llistar clients</h2>
+    <p>Clients registrats </p>
 
 <body>
    
-   <h1> Clients </h1>
    </body>
    <form action="list_client.php" method="GET">
     <select name="Poblacio">
     <option value="">  </option>
    <?php
-        $query="SELECT Poblacio FROM client ORDER BY Poblacio;";
+        $query="SELECT DISTINCT Poblacio FROM client ORDER BY Poblacio;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
         echo "<option value=\"$row[Poblacio]\"> $row[Poblacio] </option>";
@@ -25,8 +24,10 @@
     ?>
     </select>
     <button type="submit"> Filtrar </button>
+<button><a href="list_client.php">Reset</a></button>
     </form>
-<h1>
+    <HR WIDTH=0% SIZE=0 />
+
 <table>
  <thead> 
   <tr> 
@@ -57,13 +58,13 @@
                   <td>$row[Telefon]</td>
                   <td>$row[Poblacio]</td>
                   <td>$row[email]</td>
-                  <td><a href=\"delete_api_client.php?DNI_client=$row[DNI_client]\">Elimina</a></td>
+                  <td><button><a href=\"delete_api_client.php?DNI_client=$row[DNI_client]\">Elimina</a></button>
+                  <button><a href=\"insert_client.php?DNI_client=$row[DNI_client]\"> Edita</a></button></td>
                </tr>";
       }
       ?>
    </tbody>
 </table>
-<br>
 </body>
-<h1>
     </html>
+    </center>

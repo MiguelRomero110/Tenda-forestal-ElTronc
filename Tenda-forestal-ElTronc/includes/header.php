@@ -1,5 +1,4 @@
 <nav id="menu">
-
 <ul>
  <li><a href="index.php">Index</a></li>
  <li><a href="#">Productes</a>
@@ -51,3 +50,4 @@
 
 </li>
 </nav>
+<HR WIDTH=0% SIZE=0 />

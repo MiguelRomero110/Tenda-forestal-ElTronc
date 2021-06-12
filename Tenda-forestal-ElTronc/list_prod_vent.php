@@ -1,8 +1,8 @@
 <!DOCTYPE html>
     <html lang= "es">
 <?php require "includes/head.php";?>
-<?php require "includes/header.php"; ?>
-<br><br><br><br><br><br>
+
+<title>ElTronc</title>
 <body>
 <h2>
                 <?php
